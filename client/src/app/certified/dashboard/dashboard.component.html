@@ -1,0 +1,90 @@
+<div class="content-card" fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%">
+
+        <mat-card class="mat-elevation-z4">
+            <mat-card-header>
+                <button mat-fab color="primary">
+                    {{ quantity_citizen }}
+                </button>
+                <mat-card-title>Usuarios</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="container" fxLayout="row" fxLayoutAlign="center none">
+                    <div fxFlex="50%" class="text-center no-records animate">
+                        <mat-icon>people_outline</mat-icon>
+                    </div>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button [routerLink]="['/certified/area-citizen']" class="button-custom" mat-raised-button color="primary">Ver
+                    listado</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%">
+        <mat-card class="mat-elevation-z4">
+            <mat-card-header>
+                <button mat-fab color="primary">
+                    {{ quantity_administrator }}
+                </button>
+                <mat-card-title>Administradores</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="container" fxLayout="row" fxLayoutAlign="center none">
+                    <div fxFlex="50%" class="text-center no-records animate">
+                        <mat-icon>portrait</mat-icon>
+                    </div>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button [routerLink]="['/certified/area-administrator']" class="button-custom" mat-raised-button color="primary">Ver listado</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%">
+        <mat-card class="mat-elevation-z4">
+            <mat-card-header>
+                <button mat-fab color="primary">
+                    20
+                </button>
+                <mat-card-title>Certificados</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="container" fxLayout="row" fxLayoutAlign="center none">
+                    <div fxFlex="50%" class="text-center no-records animate">
+                        <mat-icon>work</mat-icon>
+                    </div>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button routerLink="/area-certified" class="button-custom" mat-raised-button color="primary">Ver
+                    informe</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%">
+        <mat-card class="mat-elevation-z4">
+            <mat-card-header>
+                <button mat-fab color="primary">
+                    {{ quantity_category_certified }}
+                </button>
+                <mat-card-title>Categorías</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="container" fxLayout="row" fxLayoutAlign="center none">
+                    <div fxFlex="50%" class="text-center no-records animate">
+                        <mat-icon>note</mat-icon>
+                    </div>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button class="button-custom" mat-raised-button color="primary">Ver listado</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+</div>

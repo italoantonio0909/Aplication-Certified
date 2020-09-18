@@ -1,0 +1,28 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+    <div fxFlex="95%">
+        <mat-card class="mat-elevation-z8">
+            <mat-card-content>
+                <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+                    <div fxFlex="50%" fxFlex.sm="95%" fxFlex.xs="95%">
+                        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                            <h2>Crear categorías de certificados</h2>
+                            <div fxLayout="row">
+                                <div fxFlex="40%" fxFlex.md="60%" fxFlex.sm="50%" fxFlex.xs="100%">
+                                    <mat-form-field class="full-width">
+                                        <input matInput formControlName="name" placeholder="Nombre">
+                                    </mat-form-field>
+                                    <img class="img-category-certified" [src]="photoSelected || 'assets/no-image-icon-4.png'" (click)="photoInput.click()">
+                                    <input hidden (change)="onPhotoSelected($event)" type="file" #photoInput>
+
+                                    <button class="button-custom" mat-raised-button color="primary">
+                                        Guardar <mat-icon></mat-icon>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

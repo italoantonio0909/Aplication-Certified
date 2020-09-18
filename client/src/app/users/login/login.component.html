@@ -1,0 +1,28 @@
+<div class="container login-container" fxLayout="row" fxLayoutAlign="center center">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" fxFlex="30%" fxFlex.sm="50%" fxFlex.xs="90%">
+        <mat-card>
+            <mat-card-subtitle>Inicia sesión en tu cuenta</mat-card-subtitle>
+            <mat-card-content>
+
+                <mat-form-field class="full-width">
+                    <input formControlName="username" matInput placeholder="Usuario">
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <input formControlName="password" matInput placeholder="Contraseña" [type]="hideCurrentPassword ? 'password' : 'text'">
+                    <mat-icon class="custom-cursor" matSuffix (click)="hideCurrentPassword = !hideCurrentPassword">
+                        {{hideCurrentPassword ? 'visibility' : 'visibility_off'}}
+                    </mat-icon>
+                </mat-form-field>
+
+
+            </mat-card-content>
+
+            <mat-card-actions class="login-actions">
+                <button class="button-custom" mat-raised-button type="submit" color="primary">Login</button>
+            </mat-card-actions>
+
+        </mat-card>
+
+    </form>
+</div>

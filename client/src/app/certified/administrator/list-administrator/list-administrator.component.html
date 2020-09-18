@@ -1,0 +1,37 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+    <div fxFlex="97%" fxFlex.xs="95%" fxFlex.sm="95%">
+
+        <mat-card class="mat-elevation-z8">
+            <mat-card-content>
+                <h2>Administradores</h2>
+
+                <table mat-table [dataSource]="dataSource" matSort>
+
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="username">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Usuario </th>
+                        <td mat-cell *matCellDef="let element"> {{ element.username }} </td>
+                    </ng-container>
+
+                    <!-- Identification Column -->
+                    <ng-container matColumnDef="email">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Dirección electrónica </th>
+                        <td mat-cell *matCellDef="let element"> {{ element.email }} </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="avatar">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Avatar </th>
+                        <td mat-cell *matCellDef="let element"><img [src]="element.avatar" class="img-avatar" alt=""></td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[3, 6, 12]" showFirstLastButtons></mat-paginator>
+
+            </mat-card-content>
+        </mat-card>
+
+    </div>
+</div>

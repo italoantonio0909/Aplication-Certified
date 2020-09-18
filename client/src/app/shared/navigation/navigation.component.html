@@ -1,0 +1,92 @@
+<div class="navbar-container" [class.example-is-mobile]="mobileQuery.matches">
+
+    <mat-toolbar class="navbar" color="primary">
+        <button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <a class="navbar-brand" matTooltip="Inicio">
+            <h4>
+                Certificados
+            </h4>
+        </a>
+        <span class="navbar-spacer"></span>
+        <!--
+        <button mat-icon-button [matMenuTriggerFor]="notificationMenu">
+            <mat-icon matBadge="2" matBadgeColor="accent">notifications</mat-icon>
+        </button>
+        <mat-menu #notificationMenu="matMenu" xPosition="before" yPosition="above" [overlapTrigger]="false">
+
+            <a mat-menu-item>
+                <span>You have new tasks</span>
+            </a>
+            <a mat-menu-item>
+                <span>You have a new message</span>
+            </a>
+        </mat-menu>-->
+
+        <button mat-button [matMenuTriggerFor]="userMenu">
+            <img [src]="photo" class="img-avatar" alt="">
+            <span fxShow fxHide.xs>
+                {{ username }}
+            </span>
+        </button>
+        <mat-menu #userMenu="matMenu" xPosition="before" yPosition="above" [overlapTrigger]="false">
+            <a (click)="openDialog()" mat-menu-item>
+                <mat-icon>exit_to_app</mat-icon>
+                <span>Cerrar sesión</span>
+            </a>
+        </mat-menu>
+    </mat-toolbar>
+
+
+    <mat-sidenav-container class="navbar-sidenav-container">
+        <mat-sidenav #snav [opened]="!mobileQuery.matches" [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" class="sidenav">
+
+            <mat-nav-list>
+                <h3 mat-subheader>Administración</h3>
+
+                <a [routerLink]="['/certified/dashboard']" mat-list-item routerLinkActive="active">
+                    <mat-icon mat-list-icon>
+                        dashboard
+                    </mat-icon>
+                    <p mat-line> Tablero </p>
+                </a>
+
+                <a mat-list-item [routerLink]="['/certified/area-citizen']" routerLinkActive="active">
+                    <mat-icon mat-list-icon>
+                        business
+                    </mat-icon>
+                    <p mat-line> Ciudadanos </p>
+                </a>
+
+                <a [routerLink]="['/certified/area-administrator']" mat-list-item routerLinkActive="active">
+                    <mat-icon mat-list-icon>
+                        people
+                    </mat-icon>
+                    <p mat-line> Administradores </p>
+                </a>
+
+
+
+                <a mat-list-item [routerLink]="['/certified/area-certified']" routerLinkActive="active">
+                    <mat-icon mat-list-icon>
+                        filter_none
+                    </mat-icon>
+                    <p mat-line> Certificados </p>
+                </a>
+
+                <a mat-list-item>
+                    <mat-icon mat-list-icon>person</mat-icon>
+                    <p mat-line> Mi cuenta </p>
+                </a>
+
+            </mat-nav-list>
+
+        </mat-sidenav>
+
+        <mat-sidenav-content class="sidenav-content">
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
